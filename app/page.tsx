@@ -36,7 +36,7 @@ export default function Home() {
     formData.append('file', file);
 
     try {
-      const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/upload`, formData, {});
+      const response = await axios.post('https://positive-courtesy-production-ebaf.up.railway.app/upload', formData, {});
       
       setSessionId(response.data.session_id);
       setFileName(response.data.filename);
@@ -72,7 +72,7 @@ export default function Home() {
     setIsLoading(true);
 
     try {
-     const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/ask`, {
+    const response = await axios.post('https://positive-courtesy-production-ebaf.up.railway.app/ask', {
         session_id: sessionId,
         question: input,
       });
