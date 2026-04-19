@@ -36,7 +36,7 @@ export default function Home() {
     formData.append('file', file);
 
     try {
-      const response = await axios.post('http://localhost:8000/upload', formData, {});
+      const response = await axios.post('https://chatpdf-backend-production-a52b.up.railway.app/upload', formData, {});
       
       setSessionId(response.data.session_id);
       setFileName(response.data.filename);
